@@ -18,6 +18,7 @@
   "author": "qinglonghu",
   "license": "MIT",
   "devDependencies": {
+    "html-withimg-loader":"0.1.16",
     "css-loader": "^0.25.0",
     "less":"2.7.1",
     "less-loader":"2.2.3",
