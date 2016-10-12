@@ -48,7 +48,8 @@ var arrayEntry = {
     'module/easyData/index':['./src/module/easyData'],
     'module/easyDesign/index':['./src/module/easyDesign'],
     'module/easyPrice/index':['./src/module/easyPrice'],
-    'module/help/index':['./src/module/help']
+    'module/help/index':['./src/module/help'],
+    'common/html/header':['./src/common/html']
 };
 module.exports = {
     devtool:'eval-source-map',
@@ -75,7 +76,7 @@ module.exports = {
             //编译less文件
             //{test:/\.less$/,loader:'style!css!less'},
             //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
-            {test: /\.(png|jpg)$/, loader: 'url-loader?limit=30000'},
+            {test: /\.(jpe?g|png|gif|svg)$/, loader: 'url-loader?limit=30000'},
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
