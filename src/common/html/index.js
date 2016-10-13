@@ -1,2 +1,2 @@
 require('common/css/global.less');
-console.log('ytyuyuyuyuyuy');
+require('common/html/header.less');
