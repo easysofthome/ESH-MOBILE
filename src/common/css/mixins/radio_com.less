@@ -1,0 +1,47 @@
+
+
+    .magic-radio{
+    position: absolute;
+    display: none; }
+
+
+    .magic-radio + label{
+    position: relative;
+    display: block;
+    padding-left: 48px;
+    cursor: pointer;
+    vertical-align: middle;
+    font-size: 26px;
+    color: #888888;
+    }
+
+    .magic-radio + label:before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    content: '';
+    border: 1px solid #c0c0c0;
+    border-radius: 50%; }
+    .magic-radio + label:after {
+    position: absolute;
+    display: none;
+    content: '';
+    top: 9px;
+    left: 9px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3e97eb; }
+    .magic-radio:checked + label:after {
+    display: block; }
+
+
+
+
+
+
+
+

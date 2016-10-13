@@ -83,7 +83,7 @@ module.exports = {
             //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
-                loader: 'url-loader?limit=30000&name=[name].[ext]&publicPath='+getpatch,
+                loader: 'url-loader?limit=30000&name=[name].[ext]',
                 include: [
                     path.resolve(__dirname, "src")
                 ]
