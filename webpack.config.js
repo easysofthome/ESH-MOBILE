@@ -34,6 +34,10 @@ var processHTML = (function(arrayEntry){
     return arrayP;
 });
 
+var getpatch = function(url){
+    console.log('success------------'+url);
+}
+
 //var extractCSS = new ExtractTextPlugin('[name].[chunkhash:8].css');   //单独打包css 加入文件指纹
 var extractCSS = new ExtractTextPlugin('[name].css');   //单独打包css
 var extractLESS = new ExtractTextPlugin('[name].less'); //单独打包less
@@ -63,7 +67,8 @@ module.exports = {
         path:'dist/',
         //filename: "[name].[chunkhash:8].js",   //输出文件名 加入文件指纹
         filename: "[name].js",   //输出文件名
-        chunkFilename:'[chunkhash:8].[id].js'  //单独打包文件 可用于异步加载
+        chunkFilename:'[name].[id].js',  //单独打包文件 可用于异步加载
+        publicPath:'/dist/'
     },
     module: {
         loaders: [
@@ -76,7 +81,13 @@ module.exports = {
             //编译less文件
             //{test:/\.less$/,loader:'style!css!less'},
             //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
-            {test: /\.(jpe?g|png|gif|svg)$/, loader: 'url-loader?limit=30000'},
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                loader: 'url-loader?limit=30000&name=[name].[ext]&publicPath='+getpatch,
+                include: [
+                    path.resolve(__dirname, "src")
+                ]
+            },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
@@ -95,22 +106,15 @@ module.exports = {
     ].concat(processHTML(arrayEntry)),
     //其它配置
     resolve:{
-        //设根路径 查找module的话从这里开始查找(如果设置此项，无法自动编译更新文件)
-        // root:'d://testWebpack/src',
+        //设根路径
+        root:[path.join(__dirname, "src")],
         //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
         extensions:['','.js','.json','.css'],
         //模块别名定义，方便后续直接引用别名，无须多写长长的地址
         alias:{
             shortName1:'/js/page1/index.js'
         }
-    },
-    //配置本地服务器
-    //devServer:{
-    //    contentBase:'/dist',//本地服务器所加载的页面所在的目录
-    //    colors:true,//终端中输出结果为彩色
-    //    istoryApiFallback: true,//不跳转,
-    //    inline: true//实时刷新
-    //}
+    }
 
 }
 

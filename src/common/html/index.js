@@ -1,1 +1,2 @@
-require('../css/global.less');
+require('common/css/global.less');
+console.log('ytyuyuyuyuyuy');
