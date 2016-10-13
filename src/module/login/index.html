@@ -13,22 +13,15 @@
 
 <header>登录</header>
 
+
+
+<img src="<%= require('./invite.png') %>"/><br/>
+<img src="<%= require('./obtain.png') %>"/><br/>
+<img src="<%= require('./price.png') %>"/>
+
+
+
+
 <footer>我是页脚</footer>
-
-<script>
-    (function (doc, win) {
-        var docEl = doc.documentElement,
-                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                recalc = function () {
-                    var clientWidth = docEl.clientWidth;
-                    if (!clientWidth) return;
-                    docEl.style.fontSize = 10 * (clientWidth / 320) + 'px';
-                };
-
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
-</script>
 </body>
 </html>
