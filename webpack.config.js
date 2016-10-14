@@ -34,10 +34,6 @@ var processHTML = (function(arrayEntry){
     return arrayP;
 });
 
-var getpatch = function(url){
-    console.log('success------------'+url);
-}
-
 //var extractCSS = new ExtractTextPlugin('[name].[chunkhash:8].css');   //单独打包css 加入文件指纹
 var extractCSS = new ExtractTextPlugin('[name].css');   //单独打包css
 var extractLESS = new ExtractTextPlugin('[name].less'); //单独打包less
@@ -64,34 +60,50 @@ module.exports = {
         },arrayEntry),
     //入口文件输出配置
     output:{
-        path:'dist/',
-        //filename: "[name].[chunkhash:8].js",   //输出文件名 加入文件指纹
+        path:'dist/',//发布文件所在目录
+        //发布文件名 加入文件指纹（部署）
+        //filename: "[name].[chunkhash:8].js",
+        //发布文件名(开发)
         filename: "[name].js",   //输出文件名
-        chunkFilename:'[name].[id].js',  //单独打包文件 可用于异步加载
+        //单独打包文件 可用于异步加载
+        chunkFilename:'[name].[id].js',
+        //动态生成的html内，引用静态资源的根路径（不设置则自动生成相对路径）
         publicPath:'/dist/'
     },
     module: {
         loaders: [
             {
-                test: /\.(less|css)$/, //匹配的文件名 单独打包css 需要手动在用link 引入
-                loader: ExtractTextPlugin.extract('style', 'css!less') //编译less文件
+                //匹配的文件名 单独打包css
+                test: /\.(less|css)$/,
+                //编译less文件
+                loader: ExtractTextPlugin.extract('style', 'css!less')
             },
             //css打包进js,动态放入html<style></style>内
             //{test:/\.css$/,loader: 'style!css'},
             //编译less文件
             //{test:/\.less$/,loader:'style!css!less'},
-            //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
+            //图片文件使用 url-loader 来处理，
             {
                 test: /\.(jpe?g|png|gif|svg)$/,
-                loader: 'url-loader?limit=30000&name=[name].[ext]',
+                //插件名
+                loader: 'url-loader',
+                query:{
+                    //小于30kb的直接转为base64
+                    limit:'30000',
+                    //图片输出路径
+                    name:'[path][name].[ext]'
+                },
                 include: [
+                    //指定要处理的目录
                     path.resolve(__dirname, "src")
                 ]
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
-                    //'file?hash=sha512&digest=hex&name=[hash:8].[ext]', //给图片加指纹
+                    //给图片加指纹（部署）
+                    //'file?hash=sha512&digest=hex&name=[hash:8].[ext]',
+                    //图片压缩
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
             }
@@ -117,4 +129,3 @@ module.exports = {
     }
 
 }
-
