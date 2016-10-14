@@ -34,8 +34,8 @@ var processHTML = (function(arrayEntry){
     return arrayP;
 });
 
-//var extractCSS = new ExtractTextPlugin('[name].[chunkhash:8].css');   //单独打包css 加入文件指纹
-var extractCSS = new ExtractTextPlugin('[name].css');   //单独打包css
+var extractCSS = new ExtractTextPlugin('[name].[contenthash:8].css');   //单独打包css 加入文件指纹
+//var extractCSS = new ExtractTextPlugin('[name].css');   //单独打包css
 var extractLESS = new ExtractTextPlugin('[name].less'); //单独打包less
 
 //需要打包的入口文件
@@ -49,7 +49,8 @@ var arrayEntry = {
     'module/easyDesign/index':['./src/module/easyDesign'],
     'module/easyPrice/index':['./src/module/easyPrice'],
     'module/help/index':['./src/module/help'],
-    'common/html/header':['./src/common/html']
+    'common/html/footer/index':['./src/common/html/footer'],
+    'common/html/header/index':['./src/common/html/header']
 };
 module.exports = {
     devtool:'eval-source-map',
@@ -62,9 +63,9 @@ module.exports = {
     output:{
         path:'dist/',//发布文件所在目录
         //发布文件名 加入文件指纹（部署）
-        //filename: "[name].[chunkhash:8].js",
+        filename: "[name].[chunkhash:8].[id].js",
         //发布文件名(开发)
-        filename: "[name].js",   //输出文件名
+        //filename: "[name].js",   //输出文件名
         //单独打包文件 可用于异步加载
         chunkFilename:'[name].[id].js',
         //动态生成的html内，引用静态资源的根路径（不设置则自动生成相对路径）
@@ -91,7 +92,7 @@ module.exports = {
                     //小于30kb的直接转为base64
                     limit:'30000',
                     //图片输出路径
-                    name:'[path][name].[ext]'
+                    name:'[path][name][hash:8].[ext]'
                 },
                 include: [
                     //指定要处理的目录
@@ -101,8 +102,6 @@ module.exports = {
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
                 loaders: [
-                    //给图片加指纹（部署）
-                    //'file?hash=sha512&digest=hex&name=[hash:8].[ext]',
                     //图片压缩
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
@@ -110,8 +109,16 @@ module.exports = {
         ]
     },
     plugins:[
+        //js压缩
+        new webpack.optimize.UglifyJsPlugin({
+            compress:{
+                warnings:false,
+            },
+            sourceMap: true,//这里的soucemap 不能少，可以在线上生成soucemap文件，便于调试
+            mangle: true
+        }),
         //解决js与css chunkHash相同导致修改CSS后js的chunkHash也会改变的问题
-        //new WebpackMd5Hash(),
+        new WebpackMd5Hash(),
         //打包css
         extractCSS
         //extractLESS  //打包less
