@@ -9,7 +9,6 @@ function processHtml(options) {
 processHtml.prototype.apply = function(compiler) {
     var that = this;
     compiler.plugin('compilation', function(compilation) {
-        console.log('二次加工HTML');
         //钩子
         compilation.plugin('html-webpack-plugin-before-html-processing', function(htmlPluginData, callback) {
             htmlPluginData.html = htmlPluginData.html.replace(/\<\/head\>/g,that.data.script+'</head>') ;
