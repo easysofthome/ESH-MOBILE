@@ -3,6 +3,7 @@ var WebpackMd5Hash = require('webpack-md5-hash'); //解决js与css chunkHash相�
 var ExtractTextPlugin = require('extract-text-webpack-plugin');//单独打包css
 var HtmlWebpackPlugin = require('html-webpack-plugin'); //自动生成html
 var path = require('path');
+var processHtml = require('./processHtml.js'); //html-webpack-plugin实现钩子回调函数，对动态生成的html进行二次加工
 
 //简单对象属性继承
 var _extends = function(des,source){
@@ -34,8 +35,8 @@ var processHTML = (function(arrayEntry){
     return arrayP;
 });
 
-var extractCSS = new ExtractTextPlugin('[name].[contenthash:8].css');   //单独打包css 加入文件指纹
-//var extractCSS = new ExtractTextPlugin('[name].css');   //单独打包css
+//var extractCSS = new ExtractTextPlugin('[name].[contenthash:8].css');   //单独打包css 加入文件指纹
+var extractCSS = new ExtractTextPlugin('[name].css');   //单独打包css
 var extractLESS = new ExtractTextPlugin('[name].less'); //单独打包less
 
 //需要打包的入口文件
@@ -63,9 +64,9 @@ module.exports = {
     output:{
         path:'dist/',//发布文件所在目录
         //发布文件名 加入文件指纹（部署）
-        filename: "[name].[chunkhash:8].[id].js",
+        //filename: "[name].[chunkhash:8].[id].js",
         //发布文件名(开发)
-        //filename: "[name].js",   //输出文件名
+        filename: "[name].js",   //输出文件名
         //单独打包文件 可用于异步加载
         chunkFilename:'[name].[id].js',
         //动态生成的html内，引用静态资源的根路径（不设置则自动生成相对路径）
@@ -85,14 +86,15 @@ module.exports = {
             //{test:/\.less$/,loader:'style!css!less'},
             //图片文件使用 url-loader 来处理，
             {
-                test: /\.(jpe?g|png|gif|svg)$/,
+                test: /\.(jpe?g|png|gif|svg|otf|ttc|ttf)$/,
                 //插件名
                 loader: 'url-loader',
                 query:{
                     //小于30kb的直接转为base64
                     limit:'30000',
                     //图片输出路径
-                    name:'[path][name][hash:8].[ext]'
+                    //name:'[path][name][hash:8].[ext]'
+                    name:'[path][name].[ext]'
                 },
                 include: [
                     //指定要处理的目录
@@ -100,25 +102,30 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /\.(jpe?g|png|gif|svg|otf|ttc|ttf)$/i,
                 loaders: [
                     //图片压缩
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
             }
-        ]
+        ],
+        htmlLoader:{
+            root: [path.join(__dirname, "dist")]
+        }
     },
     plugins:[
         //js压缩
-        new webpack.optimize.UglifyJsPlugin({
-            compress:{
-                warnings:false,
-            },
-            sourceMap: true,//这里的soucemap 不能少，可以在线上生成soucemap文件，便于调试
-            mangle: true
-        }),
+        //new webpack.optimize.UglifyJsPlugin({
+        //    compress:{
+        //        warnings:false,
+        //    },
+        //    sourceMap: true,//这里的soucemap 不能少，可以在线上生成soucemap文件，便于调试
+        //    mangle: true
+        //}),
         //解决js与css chunkHash相同导致修改CSS后js的chunkHash也会改变的问题
         new WebpackMd5Hash(),
+        //二次加工动态生成的html
+        new processHtml(),
         //打包css
         extractCSS
         //extractLESS  //打包less
