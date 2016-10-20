@@ -45,6 +45,8 @@ var arrayEntry = {
     'module/login/index':['./src/module/login'],
     'module/reg/index':['./src/module/reg'],
     'module/home/index':['./src/module/home'],
+        'module/home/easyoff/index':['./src/module/home/easyoff'],
+        'module/home/simulation/index':['./src/module/home/simulation'],
     'module/aboutUs/index':['./src/module/aboutUs'],
     'module/easyData/index':['./src/module/easyData'],
         'module/easyData/accurate/index':['./src/module/easyData/accurate'],
