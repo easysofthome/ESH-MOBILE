@@ -1,93 +1,97 @@
 
 <!DOCTYPE html>
 <html lang="zh">
-
 <head>
     <meta charset="UTF-8">
-    <title>rem phone test</title>
-    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <style>
-        html {
-            height: 100%;
-            width: 100%;
-            font-family: 'Heiti SC', 'Microsoft YaHei';
-            font-size: 20px;
-            overflow: hidden;
-            outline: 0;
-            -webkit-text-size-adjust:none;
-        }
-        body {
-            height: 100%;
-            margin: 0;
-            overflow: hidden;
-            -webkit-user-select: none;
-            position: relative;
-        }
-        header,
-        footer {
-            width: 100%;
-            line-height: 3rem;
-            font-size: 2rem;
-            color: #000;
-            border: 1px solid #ccc;
-            text-align: center;
-            background-color: #ccc;
-        }
-        .bd {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            margin-right: -1rem;
-            font-size: 0;
-        }
-        .box {
-            width: 10rem;
-            height: 10rem;
-            display: inline-block;
-            margin-right: 1rem;
-            margin-bottom: 1rem;
-        }
-        .blue-box {
-            background-color: #06c;
-        }
-        .org-box {
-            background-color: #1fc195;
-        }
-    </style>
+    <title>注册易家纺账号</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
 </head>
-
 <body>
-
-<header>我是头部33 gvff</header>
-
-
-<div class="bd">
-    <div class="box blue-box"></div>
-    <div class="box org-box"></div>
-    <div class="box blue-box"></div>
-    <div class="box org-box"></div>
-    <div class="box blue-box"></div>
-    <div class="box org-box"></div>
+<div class="regPage">
+    <header>
+        <h1>注册易家纺账号</h1>
+    </header>
+    <form method="post" class="login-form">
+        <fieldset>
+            <div class="user">
+                <span class="title">用户名</span>
+                <input type="text" name="LOGIN_NAME" placeholder="请输入邮箱或手机号" />
+            </div>
+            <div class="password">
+                <span class="title">密码</span>
+                <input type="password" name="PASSWORD" placeholder="请输入密码" />
+            </div>
+            <div class="rePassword">
+                <span class="title">确认密码</span>
+                <input type="password" name="pwdRepeat" placeholder="请再次输入密码" />
+            </div>
+            <div class="memberType">
+                <span class="title">身份</span>
+                <fieldset>
+                    <input name="MEMBER_TYPE" type="radio" value="工厂" checked="checked">
+                    <label for="MEMBER_TYPE">工厂</label>
+                    <input name="MEMBER_TYPE" type="radio" value="贸易商">
+                    <label for="MEMBER_TYPE">贸易商</label>
+                    <input name="MEMBER_TYPE" type="radio" value="进口商">
+                    <label for="MEMBER_TYPE">进口商</label>
+                    <input name="MEMBER_TYPE" type="radio" value="零售商">
+                    <label for="MEMBER_TYPE">零售商</label>
+                </fieldset>
+            </div>
+            <div>
+                <span class="title">企业中文名</span>
+                <input type="password" name="COMPANY_NAME" placeholder="请输入您的企业名称" />
+            </div>
+            <div>
+                <span class="title">企业英文名</span>
+                <input type="text" name="E_COMPANY_NAME" id="companyNameEn" placeholder="输入您的企业英文名称">
+            </div>
+            <div class="comType">
+                <span class="title">企业类型</span>
+                <fieldset class="comType_factory">
+                    <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
+                    <label class="pad" for="ENTERPRISETYPEID41">面料(含纱线、织造、染色、印花、后处理)</label><br/>
+                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
+                    <label class="pad" for="ENTERPRISETYPEID42">成品(含面料、缝制、填充物辅料)</label>
+                </fieldset>
+                <fieldset class="comType_merchant none">
+                    <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
+                    <label class="pad" for="ENTERPRISETYPEID41">面料贸易商</label><br/>
+                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
+                    <label class="pad" for="ENTERPRISETYPEID42">家纺成品贸易商</label>
+                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
+                    <label class="pad" for="ENTERPRISETYPEID42">辅助及包装材料贸易商</label>
+                </fieldset>
+                <fieldset class="comType_importers none">
+                    <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
+                    <label class="pad" for="ENTERPRISETYPEID41">面料进口商</label><br/>
+                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
+                    <label class="pad" for="ENTERPRISETYPEID42">家纺成品进口商</label>
+                </fieldset>
+            </div>
+            <div class="ck">
+                <span class="title">邀请码</span>
+                <fieldset>
+                    <input type="checkbox" id="ckBoxInviteCode" />
+                    <label for="ckBoxInviteCode">&nbsp我有邀请码</label>
+                </fieldset>
+            </div>
+            <div class="hasAuthcode">
+                <input type="text" id="txtInviteCode" name="authcode" placeholder="请输入邀请码">
+            </div>
+            <div class="whyAutocode">
+                <a href="#" class="title">什么是邀请码？</a>
+            </div>
+        </fieldset>
+        <div>
+            <button class="btn" type="button">注册</button>
+        </div>
+        <div class="agreement" >
+            <span>点击"立即注册",表示您同意并愿意遵守宜家纺<a href="#">用户协议</a>和<a href="#">隐私政策</a></span>
+        </div>
+    </form>
 </div>
 
-
-<footer>我是页脚</footer>
-
-<script>
-    (function (doc, win) {
-        var docEl = doc.documentElement,
-                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-                recalc = function () {
-                    var clientWidth = docEl.clientWidth;
-                    if (!clientWidth) return;
-                    docEl.style.fontSize = 10 * (clientWidth / 320) + 'px';
-                };
-
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener('DOMContentLoaded', recalc, false);
-    })(document, window);
-</script>
 </body>
-<script src="/dist/js/commonJs/common.js"></script>
-<script src="/dist/js/page1/p1.js"></script>
 </html>

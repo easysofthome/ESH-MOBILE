@@ -39,7 +39,7 @@ var processHTML = (function(arrayEntry){
 var extractCSS = new ExtractTextPlugin('[name].css');   //单独打包css
 var extractLESS = new ExtractTextPlugin('[name].less'); //单独打包less
 
-//需要打包的入口文件
+//需要打包的入口文件，以及输出文件目录
 var arrayEntry = {
     //指定打包公业务模块  默认打包index.js中的依赖
     'module/login/index':['./src/module/login'],
