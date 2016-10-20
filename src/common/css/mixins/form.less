@@ -1,81 +1,103 @@
 body{
-  background-color: #eeeeee;
+  color: #4e4e4e;
+  font-family: "Tahoma";
   font-size: 1.5rem;
+  background-color: #eeeeee;
 }
-.loginPage{
+
+.formPage(@pageName,@formName,@inputWidth:24rem,@inputPadl:1rem) {
+  .@{pageName} {
   margin-top: 5rem;
-  width:100%;
+  width: 100%;
   height: 100%;
-  header{
+  header {
     width: 100%;
     text-align: center;
-    margin:3rem 0 3rem 0;
-    img{
-      margin:auto;
+    margin: 3rem 0 3rem 0;
+    img {
+      margin: auto;
       width: 14rem;
     }
   }
-  .login-form{
-    height: 12rem;
-    position: relative;
-    div{
+  .@{formName} {
+  position: relative;
+    div {
       width: 25rem;
-      height: 4.5rem;
       margin: auto;
       position: relative;
       border: none;
     }
-    fieldset{
-      border: 0;
-      padding: 0;
 
-    }
-    input{
-      height: 100%;
-      width:21.5rem;
-      padding-left: 3.2rem;
-      border: 0.05rem solid ;
-      border-color: rgb(229,229,232) rgb(220,220,221) rgb(213,213,213) rgb(220,220,221);
+    input {
+      background-color: #ffffff;
+      height: 4.5rem;
+      width: @inputWidth;
+      padding-left: @inputPadl;
+      border: 0;
       display: block;
       transition: all 300ms linear;
     }
-    .user{
+    select{
+      width: 25rem;
+      height: 4.5rem;
+      padding-left: @inputPadl;
+      border: 0;
+      appearance:none;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+      color: #4e4e4e;
+      background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll 23rem center transparent;
       background-color: #ffffff;
     }
-    .password{
+    .user {
+
+    }
+    .password {
       margin-top: 0.3rem;
-      background-color: #ffffff;
+
     }
-    .user-icon{
+    .user-icon {
       display: inline-block;
       font-family: 'loginform-icon';
       text-align: center;
-      color: rgb(153,153,153);
+      color: rgb(153, 153, 153);
       position: absolute;
       left: 0.3rem;
       top: 1.5rem;
-      background-color: rgb(255,255,255);
+      background-color: rgb(255, 255, 255);
       border: none;
       width: 2.5rem;
       height: 2.4rem;
       transition: all 300ms linear;
     }
 
-    .ck{
+    .ck {
       font-size: 1.2rem;
-      line-height: 4.5rem;
       input{
         display: inline;
-        width:2.5rem;
-        height:2.5rem;
+        width: 1.2rem;
+        height: 1.2rem;
+      }
+      label{
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
       }
     }
-    .help{
+    .help {
       margin-top: 1rem;
-      a{
+      a {
         font-size: 1.1rem;
       }
     }
+    .content{
+      line-height: 4rem;
+    }
+    .getCodeBtn{
+      width:10rem;
+      font-size: 1.4rem;
+      line-height: 4.5rem;
+    }
 
   }
+}
 }

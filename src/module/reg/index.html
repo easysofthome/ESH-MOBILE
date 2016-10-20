@@ -12,8 +12,8 @@
     <header>
         <h1>注册易家纺账号</h1>
     </header>
-    <form method="post" class="login-form">
-        <fieldset>
+    <form method="post" class="reg-form">
+        <div>
             <div class="user">
                 <span class="title">用户名</span>
                 <input type="text" name="LOGIN_NAME" placeholder="请输入邮箱或手机号" />
@@ -28,7 +28,7 @@
             </div>
             <div class="memberType">
                 <span class="title">身份</span>
-                <fieldset>
+                <div class="ck">
                     <input name="MEMBER_TYPE" type="radio" value="工厂" checked="checked">
                     <label for="MEMBER_TYPE">工厂</label>
                     <input name="MEMBER_TYPE" type="radio" value="贸易商">
@@ -37,7 +37,7 @@
                     <label for="MEMBER_TYPE">进口商</label>
                     <input name="MEMBER_TYPE" type="radio" value="零售商">
                     <label for="MEMBER_TYPE">零售商</label>
-                </fieldset>
+                </div>
             </div>
             <div>
                 <span class="title">企业中文名</span>
@@ -49,33 +49,33 @@
             </div>
             <div class="comType">
                 <span class="title">企业类型</span>
-                <fieldset class="comType_factory">
+                <div class="comType_factory ck">
                     <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
                     <label class="pad" for="ENTERPRISETYPEID41">面料(含纱线、织造、染色、印花、后处理)</label><br/>
                     <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
                     <label class="pad" for="ENTERPRISETYPEID42">成品(含面料、缝制、填充物辅料)</label>
-                </fieldset>
-                <fieldset class="comType_merchant none">
+                </div>
+                <div class="comType_merchant none ck">
                     <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
                     <label class="pad" for="ENTERPRISETYPEID41">面料贸易商</label><br/>
                     <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
                     <label class="pad" for="ENTERPRISETYPEID42">家纺成品贸易商</label>
                     <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
                     <label class="pad" for="ENTERPRISETYPEID42">辅助及包装材料贸易商</label>
-                </fieldset>
-                <fieldset class="comType_importers none">
+                </div>
+                <div class="comType_importers none ck">
                     <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
                     <label class="pad" for="ENTERPRISETYPEID41">面料进口商</label><br/>
                     <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
                     <label class="pad" for="ENTERPRISETYPEID42">家纺成品进口商</label>
-                </fieldset>
+                </div>
             </div>
-            <div class="ck">
+            <div class="hasUsercode">
                 <span class="title">邀请码</span>
-                <fieldset>
+                <div class="ck">
                     <input type="checkbox" id="ckBoxInviteCode" />
-                    <label for="ckBoxInviteCode">&nbsp我有邀请码</label>
-                </fieldset>
+                    <label for="ckBoxInviteCode">我有邀请码</label>
+                </div>
             </div>
             <div class="hasAuthcode">
                 <input type="text" id="txtInviteCode" name="authcode" placeholder="请输入邀请码">
@@ -83,7 +83,7 @@
             <div class="whyAutocode">
                 <a href="#" class="title">什么是邀请码？</a>
             </div>
-        </fieldset>
+        </div>
         <div>
             <button class="btn" type="button">注册</button>
         </div>
