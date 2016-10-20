@@ -56,7 +56,13 @@ var arrayEntry = {
         'module/easyData/timely/index':['./src/module/easyData/timely'],
         'module/easyData/understanding/index':['./src/module/easyData/understanding'],
     'module/easyDesign/index':['./src/module/easyDesign'],
+        'module/easyDesign/fabric/index':['./src/module/easyDesign/fabric'],
+        'module/easyDesign/suite/index':['./src/module/easyDesign/suite'],
     'module/easyPrice/index':['./src/module/easyPrice'],
+        'module/easyPrice/fabric/index':['./src/module/easyPrice/fabric'],
+        'module/easyPrice/free/index':['./src/module/easyPrice/free'],
+        'module/easyPrice/single/index':['./src/module/easyPrice/single'],
+        'module/easyPrice/suite/index':['./src/module/easyPrice/suite'],
     'module/help/index':['./src/module/help'],
     'common/html/footer/index':['./src/common/html/footer'],
     'common/html/header/index':['./src/common/html/header']

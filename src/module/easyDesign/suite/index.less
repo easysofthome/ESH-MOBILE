@@ -1,0 +1,85 @@
+@import '../../../common/css/global.less';
+body{
+  background-color: #eeeeee;
+}
+.suite_tit{
+  margin-top: 0.5rem;
+  background-color: #fff;
+  color: #4f4f4f;
+  font-size: 1.5rem;
+  line-height: 4.2rem;
+  width: 100%;
+  text-align: center;
+}
+.suite_stepbox{
+  .clearfix;
+  .center-box;
+  width: 30rem;
+  margin-top: 3.4rem;
+  .suite1,.suite2,.suite3{
+  width: 17rem;
+  height: 9.7rem;
+  background-size:17rem 9.7rem;
+  background-image: url("./suite1.png");
+  }
+  .suite2{
+    background-image: url("./suite2.png");
+  }
+  .suite3{
+    background-image: url("./suite3.png");
+  }
+  .step_digitalbox{
+    width: 12rem;
+  }
+  .step_digital{
+    .center-box;
+    margin-top: 0.4rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #fcc639;
+    color: #fff;
+    line-height: 4rem;
+    text-align: center;
+    .border-radius(50%);
+    display: block;
+    border: 0.5rem solid #fff;
+    font-size: 2rem;
+    box-shadow: 2px 2px 5px #cccccc;
+  }
+  .step_text{
+    .center-box;
+    margin-top: 0.6rem;
+    display: block;
+    width: 12.4rem;
+    height: 3.3rem;
+    background-size:12.4rem 3.3rem;
+    background-image: url("./textbox.png");
+    text-align: center;
+    line-height: 3.3rem;
+    color: #333;
+    font-size: 1.4rem;
+  }
+  .sample_box{
+    width: 28rem;
+    height: 16rem;
+    overflow: hidden;
+    .center-box;
+    margin-top: 1rem;
+    .border-radius(1rem);
+    .sample_img,.sample_img2{
+      display: block;
+      width: 28rem;
+      height: 16rem;
+      background-size:28rem 16rem;
+      background-image: url("./img1.png");
+    }
+    .sample_img2{
+      background-image: url("./img2.png");
+    }
+    .img_text{
+      color: #fff;
+      font-size: 2rem;
+      padding: 12.2rem 0 0 1.2rem;
+    }
+  }
+}
