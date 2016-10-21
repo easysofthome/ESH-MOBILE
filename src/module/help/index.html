@@ -15,7 +15,6 @@
         <img src="<%= require('common/img/form/logo.png') %>"/>
     </header>
     <form method="post" class="forgetPwd-form">
-
             <div class="validType">
                 <select name="validMethod">
                     <option value="phone" selected="selected">手机号验证</option>
@@ -26,7 +25,7 @@
                 <input type="tel" name="userPhone" placeholder="请输入手机号" />
             </div>
             <div class="phone none">
-                <input type="email" name="userEmail" placeholder="请输入邮箱" />
+                <input type="email" name="userEmail" placeholder="请输入邮箱地址" />
             </div>
             <div class="validCode">
                 <input type="text" name="userCode" placeholder="请输入验证码" />
@@ -35,8 +34,6 @@
             <div class="submit">
                 <button class="btn" type="button">提交</button>
             </div>
-
-
     </form>
     <form method="post" class="modifyPwd-form none">
         <div>
