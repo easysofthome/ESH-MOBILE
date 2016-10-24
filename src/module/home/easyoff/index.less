@@ -48,16 +48,15 @@ body{
 .sincerity_text{
   font-size: 1.6rem;
 }
-.sincerity_tit,.participate_tit{
+.sincerity_tit,.participate_tit,.reward_tit,.integral_tit{
   .clearfix;
-  width:100%;
   padding: 1.5rem 0 1.5rem 2.5rem;
   margin-top: 1.5rem;
   background-color: #fff;
   border-bottom: 0.1rem solid #eeeeee;
 }
 .introduction{
-  padding: 1.8rem 2.5rem 1.8rem 5rem;
+  padding: 1.8rem 2.5rem 1.8rem 2.5rem;
   background-color: #fff;
   font-size: 1.3rem;
   color: #323232;
@@ -68,9 +67,94 @@ body{
   padding: 1.5rem 2.5rem 1rem 2.5rem;
   .clearfix{
   .clearfix;
+  .sendbox,.obtainbox,.acceptbox{
+    width: 6.1rem;
+  }
+  .send,.obtain,.accept{
+    width: 6.1rem;
+    height: 6.1rem;
+    background-size: 6.1rem 6.1rem;
+  }
+  .send{
+    background-image:url("./send.png");
+  }
+  .obtain{
+    background-image:url("./obtain.png");
+  }
+  .accept{
+    background-image:url("./accept.png");
+  }
+  .send_text{
+    font-size: 1.2rem;
+    color: #5d6b90;
+    line-height: 2rem;
+    text-align: center;
+  }
+  .transitionbox{
+    padding-top:2.5rem;
+    width: 4.3rem;
+    .transition{
+      .center-box;
+      width: 1.9rem;
+      height: 1rem;
+      background-size: 1.9rem 1rem;
+      background-image:url("./transition.png");
+    }
+
+  }
 }
   .participate_prompt{
     color: #ff0000;
     font-size: 1rem;
+    line-height: 1.3rem;
+  }
+}
+
+
+.obtain_box{
+  background-color: #fff;
+  padding: 1rem 2.5rem;
+  .invite_box{
+    padding: 0.5rem 0;
+    border-bottom: 0.1rem solid #eeeeee;
+    .invite{
+      background-color: #fef9b7;
+      .clearfix;
+      .invite_ico{
+        width: 5.3rem;
+        height: 6rem;
+        background-size:5.3rem 6rem;
+        background-image:url("./invite.png");
+      }
+      .invite_text{
+        padding-left: 1rem;
+        width: 20rem;
+      }
+      .invite_name,.invite2_name{
+        font-size: 1.3rem;
+        line-height:1.6rem;
+        margin-top: 0.5rem;
+        color: #ff6c46;
+      }
+      .invite2_name{
+        line-height: 2.6rem;
+      }
+      .invite_benefit{
+        color: #ff6c46;
+        font-size: 0.9rem;
+        line-height: 1.2rem;
+      }
+      .invite_offers{
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.2rem;
+      }
+    }
+  }
+  .obtain_text{
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: #ffb940;
+    line-height: 1.4rem;
   }
 }
