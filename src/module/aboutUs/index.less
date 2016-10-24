@@ -1,0 +1,201 @@
+@import '../../common/css/global.less';
+body{
+  color: #4e4e4e;
+  font-family: "Tahoma";
+  font-size: 1.5rem;
+  background-color: #eeeeee;
+}
+div {
+  width: 27rem;
+  margin: auto;
+  position: relative;
+  border: none;
+}
+.header{
+  width: 100%;
+  text-align: center;
+  header{
+    height:4.5rem;
+    ul{
+      margin-top:2rem;
+      width: 27rem;
+      height:4.5rem;
+      list-style-type: none;
+      li{
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
+        width:8.3rem;
+        font-weight: bold;
+        float: left;
+        display: list-item;
+        color: #999;
+        line-height: 4.5rem;
+      }
+      .cur{
+        span{
+          padding-top:0.4rem;
+          color: #4e4e4e;
+          border-bottom: 0.2rem solid #75A3FA;
+        }
+      }
+    }
+  }
+}
+//关于我们
+.aboutUs{
+  width: 100%;
+  text-align: center;
+  .content{
+    font-size:1.3rem;
+    .title{
+      h1{
+        font-weight: bold;
+        padding: 1rem 0 0 1rem;
+      }
+    }
+    .bgImg(@url,@bgTop:4.5rem,@h:36rem){
+      position: relative;
+      background-color: #358BB6;
+      height:@h;
+      background: url(@url) no-repeat scroll left @bgTop transparent;
+      background-size: 27rem 18rem;
+    }
+    .c_article(@top:15rem,@left:1rem,@w:25rem){
+      h1{
+        font-weight: bold;
+        padding: 1rem 0 0 1rem;
+      }
+      p{
+        text-indent: 2rem;
+        padding:1rem;
+      }
+      width:@w;
+      text-align: left;
+      position: absolute;
+      top:@top;
+      left:@left;
+      background-color: #ffffff;
+    }
+    .whoIs{
+      .bgImg('./img/eagle.png',top);
+      .article{
+        span{
+
+        }
+        .c_article(13rem,1rem,27rem);
+      }
+    }
+    .team{
+      .bgImg('./img/cooperation.png',4.5rem,34rem);
+      span{
+
+      }
+      .article{
+        .c_article;
+      }
+    }
+    .advantage{
+      .bgImg('./img/cooperation.png',4.5rem,61rem);
+       .article{
+         .c_article;
+         p{
+           text-indent: 0rem;
+         }
+       }
+     }
+    .honour{
+      .bgImg('./img/trophy.png',4.5rem,42rem);
+      .article{
+        .c_article;
+        p{
+          text-indent: 0rem;
+        }
+      }
+    }
+    .target{
+      .bgImg('./img/highway.png',4.5rem,35rem);
+      .article{
+        .c_article;
+        p{
+          text-indent: 0rem;
+        }
+      }
+    }
+  }
+}
+//公司资质
+.qualification{
+  width: 100%;
+  text-align: center;
+  .content {
+    font-size: 1.3rem;
+    .title {
+      h1 {
+        font-weight: bold;
+        padding: 1rem 0 0 0;
+      }
+    }
+    .showList{
+      ul{
+        margin-top:1rem;
+        width: 27rem;
+        list-style-type: none;
+        li{
+          float: left;
+          width: 13.5rem;
+          height: 9rem;
+          img{
+            width:13rem;
+            height: 8.7rem;
+          }
+        }
+        .cur{
+          span{
+            padding-top:0.4rem;
+            color: #4e4e4e;
+            border-bottom: 0.2rem solid #75A3FA;
+          }
+        }
+      }
+    }
+  }
+}
+
+//公司产权
+.propertyRight {
+  width: 100%;
+  text-align: center;
+  .content {
+    font-size: 1.3rem;
+    .title {
+      h1 {
+        font-weight: bold;
+        padding: 1rem 0 0 0;
+      }
+    }
+    .showList{
+      ul{
+        margin-top:1rem;
+        width: 27rem;
+        list-style-type: none;
+        li{
+          float: left;
+          width: 13.5rem;
+          height: 9rem;
+          img{
+            width:13rem;
+            height: 8.7rem;
+          }
+        }
+        .cur{
+          span{
+            padding-top:0.4rem;
+            color: #4e4e4e;
+            border-bottom: 0.2rem solid #75A3FA;
+          }
+        }
+      }
+    }
+  }
+}
+
+
