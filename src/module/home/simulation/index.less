@@ -26,11 +26,14 @@ body{
     height: 2.2rem;
     background-size:2.2rem 2.2rem;
   }
-.option_text{
+.option_text,.advantage_text{
     padding-left:0.8rem;
     line-height: 2.2rem;
     font-size:1.4rem;
     color: #323232;
+}
+.advantage_text{
+    font-size:1.6rem;
 }
 .option_box{
   margin-top:0.5rem;
@@ -43,5 +46,57 @@ body{
   }
   .fabricbox,.classicbox{
     margin-left: 1rem;
+  }
+}
+.advantage_tit{
+  .clearfix;
+  padding: 1.5rem 0 1.5rem 2.5rem;
+  margin-top: 1.5rem;
+  background-color: #fff;
+  border-bottom: 0.1rem solid #eeeeee;
+}
+.introduction{
+  padding: 1.8rem 2.5rem 1.8rem 2.5rem;
+  background-color: #fff;
+  font-size: 1.3rem;
+  color: #323232;
+  line-height: 1.5rem;
+}
+.case_box{
+  background-color: #fff;
+  padding: 1rem 0 1.8rem 0;
+  .sample{
+    width: 28rem;
+    height: 16rem;
+    overflow: hidden;
+    .center-box;
+    margin-top: 0.8rem;
+    .border-radius(1rem);
+    .sample_fab,.sample_suite,.sample_room,.sample_bathroom,.sample_restaurant,.sample_bedroom{
+      width: 28rem;
+      height: 16rem;
+      background-image:url("./img1.png");
+      background-size: 28rem 16rem;
+    }
+    .sample_suite{
+      background-image:url("./sample_suite.png");
+    }
+    .sample_room{
+      background-image:url("./room.png");
+    }
+    .sample_bathroom{
+      background-image:url("./bathroom.png");
+    }
+    .sample_restaurant{
+      background-image:url("./restaurant.png");
+    }
+    .sample_bedroom{
+      background-image:url("./bedroom.png");
+    }
+    .img_text{
+    color: #fff;
+    font-size: 2rem;
+    padding: 12.2rem 0 0 1.2rem;
+    }
   }
 }

@@ -66,6 +66,7 @@ var arrayEntry = {
         'module/easyPrice/single/index':['./src/module/easyPrice/single'],
         'module/easyPrice/suite/index':['./src/module/easyPrice/suite'],
     'module/help/index':['./src/module/help'],
+    'module/msgCenter/index':['./src/module/msgCenter'],
     'common/html/footer/index':['./src/common/html/footer'],
     'common/html/header/index':['./src/common/html/header']
 };
