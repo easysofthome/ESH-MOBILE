@@ -74,7 +74,7 @@ module.exports = {
     //入口文件
     entry:_extends({
         //指定打包公共模块
-        'common/common':['./src/common/js/cookie.js']
+        'common/common':['./src/common/js/common.js']
         },arrayEntry),
     //入口文件输出配置
     output:{

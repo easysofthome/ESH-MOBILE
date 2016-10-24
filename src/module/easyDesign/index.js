@@ -1,2 +1,4 @@
-require('common/js/layout.js');
+
+require('../../common/css/global.less');
+
 require('./index.less');

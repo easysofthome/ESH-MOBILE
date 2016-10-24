@@ -15,7 +15,7 @@
         <img src="<%= require('common/img/form/logo.png') %>"/>
     </header>
     <form method="post" class="login-form">
-        <fieldset>
+        <div>
             <div class="user">
                 <input type="text" name="userName" placeholder="请输入邮箱或手机号" />
                 <span class="user-icon icon">u</span>
@@ -24,10 +24,10 @@
                 <input type="password" name="userPwd" placeholder="请输入密码" />
                 <span class="user-icon icon">p</span>
             </div>
-        </fieldset>
-        <div class="ck">
+        </div>
+        <div class="content ck">
             <input type="checkbox" id="remberme" name="remberme" />
-            <lable for="remberme">&nbsp记住密码</lable>
+            <lable for="remberme">记住密码</lable>
         </div>
         <div>
             <button class="btn" type="button">登录</button>

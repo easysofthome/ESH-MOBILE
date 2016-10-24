@@ -1,2 +1,3 @@
-require('common/js/layout.js');
+require('../../common/css/global.less');
 require('./index.less');
+document.write('我是 登录！');
