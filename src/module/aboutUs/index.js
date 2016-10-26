@@ -1,4 +1,3 @@
-require('common/js/layout.js');
 require('./index.less');
 Zepto(function($){
     $('.header ul li').click(function(o){

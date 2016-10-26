@@ -29,14 +29,14 @@
             <div class="memberType">
                 <span class="title">身份</span>
                 <div class="ck">
-                    <input name="MEMBER_TYPE" type="radio" value="工厂" checked="checked">
-                    <label for="MEMBER_TYPE">工厂</label>
-                    <input name="MEMBER_TYPE" type="radio" value="贸易商">
-                    <label for="MEMBER_TYPE">贸易商</label>
-                    <input name="MEMBER_TYPE" type="radio" value="进口商">
-                    <label for="MEMBER_TYPE">进口商</label>
-                    <input name="MEMBER_TYPE" type="radio" value="零售商">
-                    <label for="MEMBER_TYPE">零售商</label>
+                    <input name="MEMBER_TYPE" id="MEMBER_TYPE1" type="radio" dataTag="comType_factory" value="工厂" checked="checked">
+                    <label for="MEMBER_TYPE1">工厂</label>
+                    <input name="MEMBER_TYPE" id="MEMBER_TYPE2" type="radio" dataTag="comType_merchant" value="贸易商">
+                    <label for="MEMBER_TYPE2">贸易商</label>
+                    <input name="MEMBER_TYPE" id="MEMBER_TYPE3" type="radio" dataTag="comType_importers" value="进口商">
+                    <label for="MEMBER_TYPE3">进口商</label>
+                    <input name="MEMBER_TYPE" id="MEMBER_TYPE4" type="radio" dataTag="" value="零售商">
+                    <label for="MEMBER_TYPE4">零售商</label>
                 </div>
             </div>
             <div>
@@ -50,24 +50,24 @@
             <div class="comType">
                 <span class="title">企业类型</span>
                 <div class="comType_factory ck">
-                    <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
-                    <label class="pad" for="ENTERPRISETYPEID41">面料(含纱线、织造、染色、印花、后处理)</label><br/>
-                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
-                    <label class="pad" for="ENTERPRISETYPEID42">成品(含面料、缝制、填充物辅料)</label>
+                    <input id="ENTERPRISETYPEID1" name="COMPANY_TYPE1" type="radio" checked="checked">
+                    <label for="ENTERPRISETYPEID1">面料(含纱线、织造、染色、印花、后处理)</label><br/>
+                    <input id="ENTERPRISETYPEID2" name="COMPANY_TYPE1" type="radio">
+                    <label for="ENTERPRISETYPEID2">成品(含面料、缝制、填充物辅料)</label>
                 </div>
                 <div class="comType_merchant none ck">
-                    <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
-                    <label class="pad" for="ENTERPRISETYPEID41">面料贸易商</label><br/>
-                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
-                    <label class="pad" for="ENTERPRISETYPEID42">家纺成品贸易商</label>
-                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
-                    <label class="pad" for="ENTERPRISETYPEID42">辅助及包装材料贸易商</label>
+                    <input name="COMPANY_TYPE2" id="ENTERPRISETYPEID3" type="radio" checked="checked">
+                    <label for="ENTERPRISETYPEID3">面料贸易商</label><br/>
+                    <input name="COMPANY_TYPE2" id="ENTERPRISETYPEID4" type="radio">
+                    <label for="ENTERPRISETYPEID4">家纺成品贸易商</label>
+                    <input name="COMPANY_TYPE2" id="ENTERPRISETYPEID5" type="radio">
+                    <label for="ENTERPRISETYPEID5">辅助及包装材料贸易商</label>
                 </div>
                 <div class="comType_importers none ck">
-                    <input id="ENTERPRISETYPEID41" name="COMPANY_TYPE" type="radio">
-                    <label class="pad" for="ENTERPRISETYPEID41">面料进口商</label><br/>
-                    <input id="ENTERPRISETYPEID42" name="COMPANY_TYPE" type="radio">
-                    <label class="pad" for="ENTERPRISETYPEID42">家纺成品进口商</label>
+                    <input name="COMPANY_TYPE3" id="ENTERPRISETYPEID6" type="radio" checked="checked">
+                    <label for="ENTERPRISETYPEID6">面料进口商</label><br/>
+                    <input name="COMPANY_TYPE3" id="ENTERPRISETYPEID7" type="radio">
+                    <label for="ENTERPRISETYPEID7">家纺成品进口商</label>
                 </div>
             </div>
             <div class="hasUsercode">
