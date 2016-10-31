@@ -2,13 +2,47 @@
 body{
   background-color: #eeeeee;
 }
-.banner{
-  width: 100%;
+.imgbox{
+  width: 32rem;
   height: 16rem;
+  overflow: hidden;
+  position: relative;
 
-  background-image: url("./banner_index.png");
-  background-size:100% 16rem;
+  .banner_box{
+    width: 100rem;
+    height: 100%;
+    .clearfix;
+    li{
+    width: 32rem;
+    height: 16rem;
+    }
+    .banner_img{
+    width: 32rem;
+    height: 16rem;
+  }
+  }
+  .dots_box{
+    position: absolute;
+    bottom: 1rem;
+    left:50%;
+    margin-left: -3.75rem;
+    li{
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-left: 1rem;
+      background: rgba(255, 255, 255, 0.4);
+      display: block;
+      .border-radius(50%);
+
+    }
+    .current{
+      background: rgba(231, 112, 16, 0.8);
+    }
+  }
+
+
 }
+
 .data_box{
   .clearfix;
   width: 100%;

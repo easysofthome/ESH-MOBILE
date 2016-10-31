@@ -5,11 +5,24 @@
 <head>
     <meta charset="UTF-8">
     <title>易家纺手机页面</title>
-    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-</head>
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></head>
 
 <body>
-    <div class="banner"></div>
+    <div class="imgbox">
+        <ul class="banner_box">
+            <li>
+                <img class="banner_img lf" src="<%= require('module/home/banner_index.png') %>" /></li>
+            <li>
+                <img class="banner_img lf" src="<%= require('module/home/banner_index2.png') %>" /></li>
+            <li>
+                <img class="banner_img lf" src="<%= require('module/home/banner_index3.png') %>" /></li>
+        </ul>
+        <ul class="dots_box">
+            <li class="lf current"></li>
+            <li class="lf"></li>
+            <li class="lf"></li>
+        </ul>
+    </div>
     <div class="data_box">
         <div class="lf data_one">
             <p class="data_value">6,222</p>
@@ -29,9 +42,7 @@
             <div class="lf data_ico"></div>
             <div class="lf data_contentbox">
                 <p class="platdata_name">易数据</p>
-                <p class="platdata_text">
-                    不费吹灰之力，轻松找到可靠的供应商。现在即可获得丰富而客观的公司信息。
-                </p>
+                <p class="platdata_text">不费吹灰之力，轻松找到可靠的供应商。现在即可获得丰富而客观的公司信息。</p>
             </div>
         </div>
 
@@ -39,9 +50,7 @@
             <div class="lf design_ico"></div>
             <div class="lf data_contentbox">
                 <p class="platdata_name">易设计</p>
-                <p class="platdata_text">
-                    高仿真二位织物仿真和三维成品技术，海量花型库和面料品质样库供你选择。
-                </p>
+                <p class="platdata_text">高仿真二位织物仿真和三维成品技术，海量花型库和面料品质样库供你选择。</p>
             </div>
         </div>
 
@@ -49,14 +58,12 @@
             <div class="lf price_ico"></div>
             <div class="lf data_contentbox">
                 <p class="platdata_name">易核价</p>
-                <p class="platdata_text">
-                    高仿真二位织物仿真和三维成品技术，海量花型库和面料品质样库供你选择。
-                </p>
+                <p class="platdata_text">高仿真二位织物仿真和三维成品技术，海量花型库和面料品质样库供你选择。</p>
             </div>
         </div>
     </div>
     <div class="rotation_box">
-    <div class="rotation1 lf"></div>
+        <div class="rotation1 lf"></div>
     </div>
 
 </body>
