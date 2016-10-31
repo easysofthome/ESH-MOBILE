@@ -1,11 +1,11 @@
 require('./index.less');
 require('common/js/layout.js');
 Zepto(function($){
-  var imglen,count = 0,autoChange ;
+  var imgLen,count = 0,autoChange ;
   $(document).ready(function(){
-    imglen = $(".banner_box li").length;
+    imgLen = $(".banner_box li").length;
     autoChange = setInterval(function(){
-      if(count > imglen - 1){
+      if(count > imgLen - 1){
         count ++;
       }else{
         count = 0;
@@ -19,16 +19,12 @@ Zepto(function($){
       $(".dots_box").find("li").removeClass("current").eq(num).addClass("current");
     }
 
-    $(".dots_box").find("li").each(function(item){
-      $(this).click(function(){
-        clearInterval(autoChange);
-        changeTo(item);
-        count = item;
-      },function(){
-        autoChangeAgain();
-      });
+    $(".dots_box").find("li").click(function(){
+      var index = $(".dots_box li").index(this);
+      clearInterval(autoChange);
+      changeTo(index);
+      count = index;
     });
-
 
   })
 })
