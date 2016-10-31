@@ -71,7 +71,7 @@ var arrayEntry = {
     'common/html/header/index':['./src/common/html/header']
 };
 module.exports = {
-    devtool:'eval-source-map',
+    devtool:'cheap-source-map',
     //入口文件
     entry:_extends({
         //指定打包公共模块

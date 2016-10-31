@@ -5,26 +5,25 @@
     <meta charset="UTF-8">
     <title>注册易家纺账号</title>
     <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
 </head>
 <body>
 <div class="regPage">
     <header>
         <h1>注册易家纺账号</h1>
     </header>
-    <form method="post" class="reg-form">
-        <div>
+    <form method="post" id="regForm" class="reg-form">
+        <div class="pContent">
             <div class="user">
                 <span class="title">用户名</span>
                 <input type="text" name="LOGIN_NAME" placeholder="请输入邮箱或手机号" />
             </div>
             <div class="password">
                 <span class="title">密码</span>
-                <input type="password" name="PASSWORD" placeholder="请输入密码" />
+                <input type="password" id="uPwd" min="6" max="16" name="PASSWORD" placeholder="请输入密码" />
             </div>
             <div class="rePassword">
                 <span class="title">确认密码</span>
-                <input type="password" name="pwdRepeat" placeholder="请再次输入密码" />
+                <input type="password" id="uRePwd" name="pwdRepeat" placeholder="请再次输入密码" />
             </div>
             <div class="memberType">
                 <span class="title">身份</span>
@@ -73,22 +72,25 @@
             <div class="hasUsercode">
                 <span class="title">邀请码</span>
                 <div class="ck">
-                    <input type="checkbox" id="ckBoxInviteCode" />
+                    <input type="checkbox" class="ignore" id="ckBoxInviteCode" checked="checked" />
                     <label for="ckBoxInviteCode">我有邀请码</label>
                 </div>
             </div>
             <div class="hasAuthcode">
+                <span class="title none">邀请码</span>
                 <input type="text" id="txtInviteCode" name="authcode" placeholder="请输入邀请码">
             </div>
             <div class="whyAutocode">
                 <a href="#" class="title">什么是邀请码？</a>
             </div>
         </div>
-        <div>
-            <button class="btn" type="button">注册</button>
-        </div>
-        <div class="agreement" >
-            <span>点击"立即注册",表示您同意并愿意遵守宜家纺<a href="#">用户协议</a>和<a href="#">隐私政策</a></span>
+        <div class="fixedDiv">
+            <div class="submitDiv">
+                <button class="btn register" type="button">注册</button>
+            </div>
+            <div class="agreement">
+                <span>点击"立即注册",表示您同意并愿意遵守宜家纺<a href="#">用户协议</a>和<a href="#">隐私政策</a></span>
+            </div>
         </div>
     </form>
 </div>

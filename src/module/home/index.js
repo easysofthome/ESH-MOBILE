@@ -13,20 +13,21 @@ Zepto(function($){
       changeTo(count);
     },2500);
 
-  function changeTo(num){
-    var goLeft = num * 32;
-    $(".banner_box").animate({left: "-" + goLeft + "rem"},500);
-    $(".dots_box").find("li").removeClass("indexOn").eq(num).addClass("indexOn");
-  }
-  $(".dots_box").find("li").each(function(item){
-    $(this).click(function(){
-      clearInterval(autoChange);
-      changeTo(item);
-      count = item;
-    },function(){
-      autoChangeAgain();
+    function changeTo(num){
+      var goLeft = -num * 32;
+      $(".banner_box").animate({'margin-left': goLeft + "rem"},500);
+      $(".dots_box").find("li").removeClass("current").eq(num).addClass("current");
+    }
+
+    $(".dots_box").find("li").each(function(item){
+      $(this).click(function(){
+        clearInterval(autoChange);
+        changeTo(item);
+        count = item;
+      },function(){
+        autoChangeAgain();
+      });
     });
-  });
 
 
   })

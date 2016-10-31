@@ -21,6 +21,7 @@ processHtml.prototype.apply = function(compiler) {
 var _processHtml = {
     addData: {
         'headerData':[
+        '<link href="/dist/common/common.css" rel="stylesheet">'+
         '<script>'+
             '(function (doc, win) {' +
         'var docEl = doc.documentElement,' +

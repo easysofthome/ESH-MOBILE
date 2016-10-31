@@ -1,24 +1,42 @@
 @import '../../common/css/global.less';
 @import '../../common/css/mixins/form.less';
 .formPage(regPage,reg-form);
+.fixedBottom(@b:0rem,@l:0rem){
+  position: fixed;
+  bottom: @b;
+  left: @l;
+}
 .regPage {
-  .reg-form div{
-
-    margin: 1rem auto;
-
+  margin-top: 0;
+  .reg-form{
+    div{
+      margin: 1rem auto;
+    }
+    .pContent{
+      margin-bottom: 10rem;
+    }
+    .submitDiv{
+    }
+    .agreement{
+      font-size: 1.2rem;
+      color: #a0a0a0;
+      a{
+        font-size: 1.3rem;
+        color: #2f2f2f;
+      }
+    }
+    .fixedDiv{
+      .fixedBottom;
+      width:100%;
+      margin: 0;
+      background-color: #eeeeee;
+    }
   }
   .whyAutocode{
     text-decoration: underline;
     font-size: 1.3rem;
   }
-  .agreement{
-    font-size: 1.2rem;
-    color: #a0a0a0;
-    padding-bottom: 5rem;
-    a{
-      font-size: 1.3rem;
-      color: #2f2f2f;
-    }
-  }
+
+
 }
 
