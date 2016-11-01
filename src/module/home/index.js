@@ -10,12 +10,20 @@ Zepto(function($){
           count ++;
         }else{
           count = 0;
+
         }
         changeTo(count);
-      },2500);
+      },5000);
     }
     function changeTo(num){
       var goLeft = -num * 32;
+      var max = (-imgLen * 32) + "rem";
+      if(num==0){
+        $(".banner_box").css("margin-left","32rem");
+        var sta = $(".banner_box li").last();
+        $(".banner_box").before(sta);
+
+      }
       $(".banner_box").animate({'margin-left': goLeft + "rem"},500);
       $(".dots_box").find("li").removeClass("current").eq(num).addClass("current");
     }
