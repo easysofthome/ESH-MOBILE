@@ -7,24 +7,36 @@ Zepto(function($){
     autoChange : {},  //自动播放函数
     dots:{},
     $boxSel:{},
-    defOpt:{          //默认配置
-      boxSelector:'.banner_box', //容器
-      speed:5000,     //图片轮播速度,
-      dotsBoxSelector:'.dots_box',
-      subBoxWidth:32,
+    defOpt:{                             //默认配置
+      boxSelector:'.banner_box',         //图片轮播容器
+      speed:5000,                        //图片轮播速度,
+      dotsBoxSelector:'.dots_box',       //小圆点容器
+      subBoxWidth:32,                    //图片宽度
     },
-    opts:{}           //当前配置
+    opts:{}                              //当前配置
   }
-  //初始化
+  /**
+   * @option:用户配置包含以下参数
+   *  boxSelector,    //容器
+   *  speed:5000,     //图片轮播速度,
+   *  dotsBoxSelector,//小圆点容器
+   *  subBoxWidth,    //图片宽度
+   * 初始化
+   */
   slideBanner.init = function(option){
-    this.opts = $.extend(this.defOpt,option);
-    this.dots = $(this.opts.dotsBoxSelector).children("li");
-    this.$boxSel = $(this.opts.boxSelector);
-    this.startMove();
+    this.opts = $.extend(this.defOpt,option);                   //配置继承
+    this.dots = $(this.opts.dotsBoxSelector).children("li");    //存储img的li
+    this.$boxSel = $(this.opts.boxSelector);                    //ul
+    var cloneLi =  this.$boxSel.html();                         //克隆原先li
+    this.$boxSel.append(cloneLi);                               //将克隆的li追加的容器后面
+    this.imgLen = $(this.opts.boxSelector+" li").length;        //当前所有图片数量
+    this.startMove();                                           //开始轮换图片
+    this.bindEvent();                                           //事件绑定
   }
   //事件绑定
   slideBanner.bindEvent = function(){
     var that = this;
+    //小圆点点击事件
     that.dots.click(function(){
       that.userMove(this);
     });
@@ -33,9 +45,6 @@ Zepto(function($){
   slideBanner.startMove = function(){
     var that = this;
     var _index = that.curIndex;
-    var cloneLi =  that.$boxSel.html();
-    that.$boxSel.append(cloneLi);
-    that.imgLen = $(that.opts.boxSelector+" li").length;
     that.autoChange = setInterval(function(){
       if(_index < that.imgLen - 1){
         _index ++;
@@ -53,7 +62,7 @@ Zepto(function($){
     this.$boxSel.animate({'margin-left': goLeft + "rem"},this.dots.speed);
     this.dotsChange(curIndex);
   }
-  //
+  //小圆点样式切换
   slideBanner.dotsChange = function(curIndex){
     if(curIndex > this.imgLen/2 - 1){
       curIndex = curIndex%(this.imgLen/2);
@@ -64,7 +73,7 @@ Zepto(function($){
   slideBanner.userMove = function(that){
     var index = this.dots.index(that);
     clearInterval(this.autoChange);
-    changeTo(index);
+    this.changeTo(index);
     this.curIndex = index;
     this.startMove();
   }
