@@ -4,7 +4,7 @@
   "description": "esh-mobile",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --inline --hot --host 0.0.0.0",
+    "start": "webpack-dev-server --inline --hot --host 0.0.0.0 --content-base dist/",
     "build": "webpack --display-error-details",
     "watch": "webpack --progress --colors --watch"
   },
