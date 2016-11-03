@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"></head>
 
 <body>
-    <div class="imgbox">
+    <div class="imgbox header">
         <ul class="banner_box">
             <li>
                 <img class="banner_img lf" src="<%= require('module/home/banner_index.png') %>" /></li>
@@ -63,7 +63,21 @@
         </div>
     </div>
     <div class="rotation_box">
-        <div class="rotation1 lf"></div>
+        <div class="imgbox">
+            <ul class="banner_box">
+                <li>
+                    <img class="banner_img lf" src="<%= require('module/home/rotation1.png') %>" /></li>
+                <li>
+                    <img class="banner_img lf" src="<%= require('module/home/rotation1.png') %>" /></li>
+                <li>
+                    <img class="banner_img lf" src="<%= require('module/home/rotation1.png') %>" /></li>
+            </ul>
+            <ul class="dots_box">
+                <li class="lf current"></li>
+                <li class="lf"></li>
+                <li class="lf"></li>
+            </ul>
+        </div>
     </div>
 
 </body>
